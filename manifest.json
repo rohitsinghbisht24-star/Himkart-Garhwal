@@ -1,24 +1,24 @@
 {
-  "id": "/",
+  "id": "/Himkart-Garhwal/",
   "name": "Himkart-Garhwal",
   "short_name": "HimKart",
   "description": "Premium delivery for food and essentials in Garhwal.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/Himkart-Garhwal/",
+  "scope": "/Himkart-Garhwal/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "newlogo.png",
+      "src": "newlogo.jpg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "newlogo.png",
+      "src": "newlogo.jpg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     }
   ]
