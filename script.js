@@ -2126,7 +2126,7 @@ Object.keys(groupedItems).forEach(cat => {
     msg += `_Cash or UPI on Delivery, our delivery partner will call you shortly._`;
 
     // --- SAVE TO GOOGLE SHEETS ---
-    fetch('https://script.google.com/macros/s/AKfycbwa1ItNiI0pxItnMhMRr6WG2vmiJWz0rLbciDkKeP-se79yueaGSC_qfPl4_kxSuEOd/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzZ6qgEo6q3ltkj2DQ717act3_HAagIAYCrGP7Spe9z77q-gz7I-eAVsT2-shvAixdN1Q/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
