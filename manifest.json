@@ -10,16 +10,22 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "newlogo.jpg",
+      "src": "/Himkart-Garhwal/icon-192.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "newlogo.jpg",
+      "src": "/Himkart-Garhwal/icon-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Himkart-Garhwal/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
