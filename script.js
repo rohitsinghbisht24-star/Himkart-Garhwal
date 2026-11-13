@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const locationBtn = document.getElementById('location-btn');
     // --- WINK IT CONFIGUadc ---
     // These coordinates are set to the heart of Mussoorie (approx Kulri/Mall Rd area)
-    const SHOP_COORDS = { lat: 30.230540, lon: 78.807901 }; // F33P+4FJ Mussoorie
+    const SHOP_COORDS = { lat: 30.223282, lon: 78.789986 }; // F33P+4FJ Mussoorie
     let currentDistance = 0; 
     let locationTagged = false; // Global variable to hold the calculated distance
     const body = document.body;
@@ -1504,12 +1504,12 @@ if (sliderTitle) {
         else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta" || firstLocationWord === "Semwala") {
             kmCharges = 80;
         } else {
-            if (currentDistance <= 1) kmCharges = 30;
-            else if (currentDistance <= 2) kmCharges = 50; 
-            else if (currentDistance <= 3) kmCharges = 80;
-            else if (currentDistance <= 4) kmCharges = 150;
-            else if (currentDistance <= 5) kmCharges = 200;
-            else kmCharges = 500; 
+            if (currentDistance <= 1) kmCharges = 50;
+            else if (currentDistance <= 2) kmCharges = 70; 
+            else if (currentDistance <= 3) kmCharges = 90;
+            else if (currentDistance <= 4) kmCharges = 160;
+            else if (currentDistance <= 5) kmCharges = 240;
+            else kmCharges = 600; 
         }
     }
 
