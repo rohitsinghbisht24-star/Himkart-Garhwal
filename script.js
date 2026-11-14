@@ -220,8 +220,8 @@ startAutoPlay();
         { q: "12. Where is The Fine Dine Deluxe restraunt?", a: "The Fine Dine is not a restraunt, the Fine Dine Deluxe is an experience where we deliver the meals from the restraunt which has good review for the added item.." }
     ];
     const collections = [
-        { id: "diwali", name: "Diwali Special",                         previews: ["diwalis.jpg"] },
-        { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
+        /*{ id: "diwali", name: "Diwali Special",                         previews: ["diwalis.jpg"] },*/
+        
 
         
         
@@ -238,6 +238,7 @@ startAutoPlay();
         { id: "adc", name: "Aa, Dal, and Rice",                   previews: ["adr.jpg"] },
         { id: "dbm", name: "Dairy, Bread, and Milk",                previews: ["dbm.jpg"] },
         { id: "mo", name: "Masalas and Oils",                       previews: ["mo.jpg"] },
+        { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
         
         { id: "sak", name: "Spreads and Ketchup",                       previews: ["sak.jpg"] },
         
@@ -425,12 +426,12 @@ startAutoPlay();
                         
                 
 
-/*Kurkure*/             { id: 4001, name: "Kurkure Chutney",                                                image: "skurkurec.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
-                        { id: 4002, name: "Kurkure Chilli",                                                 image: "skurkurecc.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
-                        { id: 4003, name: "Kurkure Masala",                                                 image: "skurkurem.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
-                        { id: 4004, name: "Kurkure Puffcorn",                                               image: "skurkurep.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
-                        { id: 4005, name: "Kurkure Schezwan Chutney",                                       image: "skurkuresc.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
-                        { id: 4027, name: "Kurkure Solid Masti",                                       image: "skurkuresm.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
+/*Kurkure*/             { id: 4001, name: "Kurkure Chutney",                                                image: "skurkurec.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 20, count: 0, unit: "75g" } } },
+                        { id: 4002, name: "Kurkure Chilli",                                                 image: "skurkurecc.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 20, count: 0, unit: "75g" } } },
+                        { id: 4003, name: "Kurkure Masala",                                                 image: "skurkurem.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 20, count: 0, unit: "75g" } } },
+                        { id: 4004, name: "Kurkure Puffcorn",                                               image: "skurkurep.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 20, count: 0, unit: "75g" } } },
+                        { id: 4005, name: "Kurkure Schezwan Chutney",                                       image: "skurkuresc.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 20, count: 0, unit: "75g" } } },
+                        { id: 4027, name: "Kurkure Solid Masti",                                       image: "skurkuresm.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 20, count: 0, unit: "75g" } } },
 
                         { id: 4028, name: "Cornitos Nacho Crisps Sea Salt",                                       image: "scornitosss.jpg",        cat: "snacks",                   subcat: "Cornitos",                    selectedVariant: "L",           variants: { "L":        { price: 90, count: 0, unit: "150g" } } },
                         { id: 4029, name: "Cornitos Nacho Cheese n Herbs",                                       image: "scornitosch.jpg",        cat: "snacks",                   subcat: "Cornitos",                    selectedVariant: "L",           variants: { "L":        { price: 90, count: 0, unit: "150g" } } },
@@ -1164,11 +1165,10 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Diwali Special",
-        2:  "Drinks & Snacks", /*3 */
-        8:  "Grocery & Kitchen",/*9 */
-        13: "Beauty and Personal Care",/*10 */
-        19: "House Hold Essentials"/*18 */
+        0:  "Drinks & Snacks", /*3 */
+        6:  "Grocery & Kitchen",/*9 */
+        12: "Beauty and Personal Care",/*10 */
+        18: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -1455,7 +1455,7 @@ if (sliderTitle) {
 
     function updateSidebar() {
     let itemsTotal = 0, totalItems = 0, totalTax = 0;
-    const paperBagCharge = 10; // Defined Bag Charge
+    const paperBagCharge = 0; // Defined Bag Charge
     let html = "";
 
     products.forEach(p => {
