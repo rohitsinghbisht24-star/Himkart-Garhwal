@@ -1504,11 +1504,11 @@ if (sliderTitle) {
         else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta" || firstLocationWord === "Semwala") {
             kmCharges = 80;
         } else {
-            if (currentDistance <= 1) kmCharges = 50;
-            else if (currentDistance <= 2) kmCharges = 70; 
-            else if (currentDistance <= 3) kmCharges = 90;
-            else if (currentDistance <= 4) kmCharges = 160;
-            else if (currentDistance <= 5) kmCharges = 240;
+            if (currentDistance <= 1) kmCharges = 30;
+            else if (currentDistance <= 2) kmCharges = 50; 
+            else if (currentDistance <= 3) kmCharges = 70;
+            else if (currentDistance <= 4) kmCharges = 90;
+            else if (currentDistance <= 5) kmCharges = 110;
             else kmCharges = 600; 
         }
     }
