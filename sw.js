@@ -1,60 +1,32 @@
-const GHPATH = '/Himkart-Garhwal';
-const CACHE_NAME = 'wink-it-v4';
-
-// Only lightweight critical static files are pre-cached on install
+const CACHE_NAME = 'himkart-invoice-v1';
 const ASSETS = [
-  `${GHPATH}/`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/style.css`,
-  `${GHPATH}/script.js`,
-  `${GHPATH}/icon-192.png`
+  './',
+  './index.html',
+  'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'
 ];
 
-// Install Event: Cache critical resources safely
+// Install Service Worker
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS);
     })
   );
-  self.skipWaiting();
 });
 
-// Activate Event: Delete old caches and claim clients immediately
+// Activate & Cleanup Old Caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
       );
-    }).then(() => self.clients.claim())
+    })
   );
 });
 
-// Skip waiting message handler
-self.addEventListener('message', (event) => {
-  if (event.data === 'skipWaiting') {
-    self.skipWaiting();
-  }
-});
-
-// Fetch Event: Direct network for media, cache-first for assets
+// Fetch Strategy: Cache First, then Network
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-
-  // Bypass strict caching for videos (`intro.mp4`) to prevent range-request/streaming failures
-  if (url.pathname.endsWith('.mp4') || url.pathname.endsWith('.webm')) {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
-    );
-    return;
-  }
-
-  // Standard cache-first strategy for app files
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       return cachedResponse || fetch(event.request);
