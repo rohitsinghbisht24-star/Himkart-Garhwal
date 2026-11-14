@@ -1,35 +1,31 @@
-const CACHE_NAME = 'himkart-invoice-v1';
+/* remove this for the code to work
+const GHPATH = '/Himkart-Garhwal';
+const CACHE_NAME = 'wink-it-v3'; // Increment this every time you change code!
 const ASSETS = [
-  './',
-  './index.html',
-  'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'
+  '/',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  '/newlogo.jpg',
+  '/intro.mp4'
 ];
 
-// Install Service Worker
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
 });
 
-// Activate & Cleanup Old Caches
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-      );
-    })
-  );
+// Add this: allows the new SW to take over immediately
+self.addEventListener('message', (event) => {
+  if (event.data === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });
 
-// Fetch Strategy: Cache First, then Network
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request);
-    })
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
+*/
