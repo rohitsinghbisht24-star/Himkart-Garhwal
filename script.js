@@ -2154,7 +2154,7 @@ Object.keys(groupedItems).forEach(cat => {
 /*☆*/
     const referenceDate = new Date("2026-02-19"); /*★★★★☆*/
     const reviews = [
-        { name: "-Sumaira Vishanathan-", img: "r2.png", stars: "★★★★★(5/5)", text: "The Delivery person was polite and followed all instructions", from: "HNBGU, Gadwal", date: "2026-09-01" },
+        { name: "-Sumaira Vishanathan-", img: "r2.png", stars: "★★★★★(5/5)", text: "The Delivery person was polite and followed all instructions", from: "HNBGU, Garhwal", date: "2026-09-01" },
         { name: "-Alok Nath-", img: "r5.png", stars: "★★★★☆(4/5)", text: "Our delivery was 15mins late but the app made sure we were always updated", from: "GVK Office, Chauras", date: "2026-09-26" },
         { name: "-Ramsharan Aggarwal-", img: "r1.png", stars: "★★★★☆(4/5)", text: "Very nice service for hilly areas", from: "Gola Bazzar, Srinagar", date: "2026-09-20" },
         { name: "-Anjali Negi-", img: "r3.png", stars: "★★★☆☆(3/5)", text: "Please find routes to beat the traffic and be more fast", from: "Natur's Lap, Maletha", date: "2026-09-23" },
